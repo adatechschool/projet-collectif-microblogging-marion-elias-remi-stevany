@@ -21,6 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/patate', [\App\Http\Controllers\UserProfileController::class, 'index']);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

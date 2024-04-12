@@ -22,6 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'bio',
     ];
 
     /**
@@ -44,7 +45,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    // Déclaration of ont to many relation bewteen user and post models
+    // Déclaration of one to many relation bewteen user and post models
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class);
