@@ -10,8 +10,9 @@
     <h1>Hello UserProfile</h1>
     <ul>
         @foreach ($UserInfo as $info)
-        <li></li>
-        <li>Name: {{ $info->name }}</li>
+        <li>
+            <a href="{{ route('user.profile', ['id' => $info->id]) }}">{{ $info->name }}</a>
+        </li>
         <li>Email: {{ $info->email }}</li>
         <li>Bio: {{ $info->bio }}</li>
         @endforeach
