@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewPostController;
 use App\Models\Post;
 
@@ -26,6 +26,8 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/posts', function () {
     $posts = Post::all(); // Récupérer tous les posts
