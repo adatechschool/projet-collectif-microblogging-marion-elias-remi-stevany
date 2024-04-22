@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewPostController;
@@ -21,7 +22,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/patate', [\App\Http\Controllers\UserProfileController::class, 'index']);
+Route::get('/user-profile', [\App\Http\Controllers\UserProfileController::class, 'index'])->name('users.profiles');
+Route::get('/user-profile/{id}', [\App\Http\Controllers\UserProfileController::class, 'specific'])
+->name('user.profile')
+->middleware('auth.user');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

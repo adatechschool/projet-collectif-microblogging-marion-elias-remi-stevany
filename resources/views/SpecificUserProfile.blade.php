@@ -7,7 +7,7 @@
 </head>
 <body>
     
-    <h1>Hello User</h1>
+    <h1>Hello {{$UserInfo->name}} !</h1>
 
     <h2>Infos :</h2>
     <ul>
@@ -16,7 +16,7 @@
         <li>Bio: {{ $UserInfo->bio }}</li>
     </ul>
         <br>
-
+     @if ($UserPosts->count() > 0)
     <h2>Posts :</h2>
     <ul>
         @foreach ($UserPosts as $post)
@@ -24,6 +24,7 @@
             <li>{{$post->content}}</li>
         @endforeach
     </ul>
-   
+    @endif
+
 </body>
 </html>
