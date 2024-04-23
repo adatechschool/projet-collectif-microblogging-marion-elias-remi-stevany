@@ -28,7 +28,7 @@ public function store(Request $request)
     $post->save();
 
     // Redirect the user
-    return redirect()->route('posts.index')->with('success', 'Post created successfully!');
+    return redirect()->route('dashboard')->with('success', 'Post created successfully!');
 }
 
 }
